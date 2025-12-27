@@ -1,16 +1,20 @@
 package in.dev_shiv_ansh.trajectory_backend.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.UUID;
 
-@Getter
 @Entity
 @Table(name = "users")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
+    @GeneratedValue
     @Column(name = "id", columnDefinition = "uuid")
     private UUID id;
 
@@ -20,7 +24,17 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    // getters setters
+    public UUID getId() {
+        return id;
+    }
 
-    // getters setters
+    public String getEmail() {
+        return email;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
 }
+
+

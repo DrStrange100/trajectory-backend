@@ -20,4 +20,11 @@ public class HomeController {
     public List<User> homeData() {
         return userService.getAllUsers();
     }
+
+    // 👇 YAHAN ADD KARO (temporary)
+    @GetMapping("/debug")
+    public String debug() {
+        User u = userService.getAllUsers().get(0);
+        return u.getEmail() + " | " + u.getFullName();
+    }
 }

@@ -1,5 +1,6 @@
 package in.dev_shiv_ansh.trajectory_backend.controller;
 
+import in.dev_shiv_ansh.trajectory_backend.constant.ApplicationConstant;
 import in.dev_shiv_ansh.trajectory_backend.constant.RestConstant;
 import in.dev_shiv_ansh.trajectory_backend.entity.User;
 import in.dev_shiv_ansh.trajectory_backend.service.UserService;
@@ -21,7 +22,7 @@ public class HomeController {
 
     @GetMapping({RestConstant.HEALTH_CHECK})
     public String healthCheck() {
-        return "healthy";
+        return ApplicationConstant.SUCCESS;
     }
 
 //    public List<User> getUsers(){
